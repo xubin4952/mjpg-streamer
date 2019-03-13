@@ -93,6 +93,10 @@ folder:
 ```
 export LD_LIBRARY_PATH=.
 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so"
+
+/*设置分辨率*/
+./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -r 320*240 -f 12" -o "./output_http.so -p 8090 -w ./www"
+
 ```
 
 See [README.md](mjpg-streamer-experimental/README.md) or the individual plugin's documentation for more details.
